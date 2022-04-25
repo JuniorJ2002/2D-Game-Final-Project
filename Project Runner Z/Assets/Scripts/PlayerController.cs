@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
+    public int points = 0;
+
+
     // Global Variables
     private Rigidbody2D playerRb;
     public float jumpForce = 10.0f;
@@ -42,24 +45,17 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        
+        if (collision.gameObject.CompareTag("coin"))
         {
-            isOnGround = true;
-            Debug.Log("Player is on the ground!");
-            dirtParticle.Play();
+            Destroy(collision.gameObject);
+            points = points + 10;
         }
-        else if (collision.gameObject.CompareTag("Obstacle"))
-        {
-            gameOver = true;
-            Debug.Log("Game Over!");
-            playerAnim.SetBool("Death_b", true);
-            playerAnim.SetInteger("DeathType_int", 1);
-            explosionParticle.Play();
-            playerAudio.PlayOneShot(crashSound, 1.0f);
-        }
+
     }
+
 }
 
 

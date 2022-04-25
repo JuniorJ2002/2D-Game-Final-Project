@@ -1,29 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class SpawnManager : MonoBehaviour
 {
-    // Variables
-    public GameObject coinPrefab;
-    public Vector3 spawnPos = new Vector3(25, 0, 0);
-    public float startDelay = 2.0f;
-    public float repeatRate = 2.0f;
-    // Accessing PlayerController
-    private PlayerController playerController;
+    public GameObject[] objectPrefabs;
+    private float spawnDelay = 2;
+    private float spawnInterval = 3f;
+
+    private PlayerController PlayerControllerScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnCoin", startDelay, repeatRate);
-        playerController = GameObject.Find("HeroKnight").GetComponent<PlayerController>();
+        InvokeRepeating("SpawnObject", spawnDelay, spawnInterval);
+        PlayerControllerScript = GameObject.Find("HeroKnight").GetComponent<PlayerController>();
     }
-    // Update is called once per frame
-    void Update()
+
+    // Spawn obstacles
+    void SpawnObject()
     {
-    }
-    void SpawnObstacle()
-    {
-        if (playerController.gameOver == false)
-            Instantiate(coinPrefab, spawnPos, coinPrefab.transform.rotation);
+        // Set random spawn location and random object index
+        Vector2 spawnLocation = new Vector2(Random.Range(-10,10), Random.Range(-4, 5));
+        int index = Random.Range(0, objectPrefabs.Length);
+
+        // If game is still active, spawn new object
+        if (!PlayerControllerScript.gameOver)
+        {
+            Instantiate(objectPrefabs[index], spawnLocation, objectPrefabs[index].transform.rotation);
+        }
+
     }
 }
+
 

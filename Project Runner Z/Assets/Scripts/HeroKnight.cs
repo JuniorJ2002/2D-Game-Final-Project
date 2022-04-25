@@ -26,6 +26,9 @@ public class HeroKnight : MonoBehaviour {
     private float               m_rollDuration = 8.0f / 14.0f;
     private float               m_rollCurrentTime;
 
+    private bool trigOnce = false;
+    public float timer = 0.0f;
+
 
     // Use this for initialization
     void Start ()
@@ -146,14 +149,42 @@ public class HeroKnight : MonoBehaviour {
             
 
         //Jump
-        else if (Input.GetKeyDown("space") && m_grounded && !m_rolling)
+        else if (Input.GetKeyDown("space") && trigOnce == false)
         {
-            m_animator.SetTrigger("Jump");
-            m_grounded = false;
-            m_animator.SetBool("Grounded", m_grounded);
-            m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
-            m_groundSensor.Disable(0.2f);
+            //timer = 0;
+            timer += Time.deltaTime;
+            if (trigOnce == false && timer < 1)
+            {
+                m_animator.SetTrigger("Jump");
+                m_grounded = false;
+                m_animator.SetBool("Grounded", m_grounded);
+                m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
+                m_groundSensor.Disable(0.2f);
+            }
+
+            trigOnce = true;
+
         }
+
+        else if (Input.GetKeyDown("space") && trigOnce == true)
+        {
+            timer += Time.deltaTime;
+
+
+            if (trigOnce == true && timer > 10)
+            {
+                m_animator.SetTrigger("Jump");
+                m_grounded = false;
+                m_animator.SetBool("Grounded", m_grounded);
+                m_body2d.velocity = new Vector2(m_body2d.velocity.x, m_jumpForce);
+                m_groundSensor.Disable(0.2f);
+            }
+
+            trigOnce = false;
+
+        }
+
+
 
         //Run
         else if (Mathf.Abs(inputX) > Mathf.Epsilon)
@@ -191,5 +222,7 @@ public class HeroKnight : MonoBehaviour {
             // Turn arrow in correct direction
             dust.transform.localScale = new Vector3(m_facingDirection, 1, 1);
         }
-    }
+
+        
+     }
 }
