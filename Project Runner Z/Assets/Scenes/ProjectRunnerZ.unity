@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points: 0
-  jumpForce: 10
+  jumpForce: 12
   gravityModifier: 0
   isOnGround: 1
   gameOver: 0
@@ -286,10 +286,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 4
-  m_jumpForce: 7.5
+  m_jumpForce: 8
   m_rollForce: 6
   m_noBlood: 0
   m_slideDust: {fileID: 0}
+  timer: 0
 --- !u!114 &64086068
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -877,7 +878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_jumpForce
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 9043920546160527475, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_rollForce
@@ -885,11 +886,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Size.x
-      value: 0.7537092
+      value: 0.71524227
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Size.y
-      value: 1.183065
+      value: 1.1555887
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Enabled
@@ -897,11 +898,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Offset.x
-      value: 0.0118543655
+      value: -0.0073791146
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_Offset.y
-      value: 0.67046756
+      value: 0.6842057
       objectReference: {fileID: 0}
     - target: {fileID: 9117128348835321587, guid: a4b4a6d32bcb19248a754d6602ffc7e4, type: 3}
       propertyPath: m_IsTrigger
@@ -919,6 +920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1030484406}
   - component: {fileID: 1030484405}
+  - component: {fileID: 1030484407}
   m_Layer: 0
   m_Name: SpawnManager
   m_TagString: Untagged
@@ -954,6 +956,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1030484407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030484404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd5361dc3859a4e1580448a46c860ccc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs:
+  - {fileID: 522736057471504133, guid: 2f1cd2bee1163420b96a00918cccaacf, type: 3}
 --- !u!1 &1210025978
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,7 +1566,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141414161}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.003, y: -2.2351, z: 0}
+  m_LocalPosition: {x: 0.003, y: -2.39, z: 0}
   m_LocalScale: {x: 1.9877373, y: 0.48332298, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
