@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+
 public class PlayerController : MonoBehaviour
 {
     public int points = 0;
-
+    private int score;
+    public TextMeshProUGUI scoreText;
 
     // Global Variables
     private Rigidbody2D playerRb;
@@ -45,17 +49,26 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(jumpSound, 1.0f);
         }
     }
+
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         
         if (collision.gameObject.CompareTag("coin"))
         {
             Destroy(collision.gameObject);
-            points = points + 10;
+            points = 10;
+            UpdateScore(points);
         }
 
     }
 
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
+
+    }
 }
 
 

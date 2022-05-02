@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
     private float spawnDelay = 2;
     private float spawnInterval = 3f;
+    private int score;
+    public TextMeshProUGUI scoreText;
 
     private PlayerController PlayerControllerScript;
 
@@ -32,7 +36,14 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-  
+    public void UpdateScore(int scoreToAdd)
+    {
+        score += scoreToAdd;
+        scoreText.text = "Score: " + score;
+
+    }
+
+
 }
 
 
