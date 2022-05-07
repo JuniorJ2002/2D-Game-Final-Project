@@ -12,7 +12,7 @@ public class EnemyFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetPlayer = GameObject.FindGameObjectWithTag("HeroKnight").GetComponent<Transform>();
+        targetPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame

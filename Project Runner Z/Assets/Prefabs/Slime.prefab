@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 522736057471504135}
   - component: {fileID: 522736057471504132}
   - component: {fileID: 6940554827137108061}
+  - component: {fileID: -6234907740966287659}
   m_Layer: 0
   m_Name: Slime
   m_TagString: Enemy
@@ -112,9 +113,33 @@ MonoBehaviour:
   m_GameObject: {fileID: 522736057471504133}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea2ad831bcde8e94a95721b7d6c59237, type: 3}
+  m_Script: {fileID: 11500000, guid: 56563244fd0c63b4b95bad899e751337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  distance: 0
-  groundDetection: {fileID: 0}
+  speed: 2
+--- !u!61 &-6234907740966287659
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 522736057471504133}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0

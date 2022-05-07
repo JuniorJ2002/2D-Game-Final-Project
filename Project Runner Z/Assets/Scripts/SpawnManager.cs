@@ -10,7 +10,11 @@ public class SpawnManager : MonoBehaviour
     private float spawnDelay = 2;
     private float spawnInterval = 3f;
     private int score;
+    public bool isGameActive;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
+    public Button restartButton;
+
 
     private PlayerController PlayerControllerScript;
 
@@ -43,7 +47,21 @@ public class SpawnManager : MonoBehaviour
 
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collide");
 
+        if (collision.gameObject.tag == "Enemy")
+        {
+           
+
+            gameOverText.gameObject.SetActive(true);
+            restartButton.gameObject.SetActive(true);
+            isGameActive = false;
+
+        }
+    }
 }
+
 
 
