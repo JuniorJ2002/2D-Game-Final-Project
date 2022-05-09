@@ -5,7 +5,7 @@ using UnityEngine.AI; // Unity AI
 public class SlimeSpawner : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
-    private float spawnDelay = 2;
+    private float spawnDelay = 10f;
     private float spawnInterval = 8f;
     public float chasingInterval = 2f;
     public float chasingDistance = 12f;

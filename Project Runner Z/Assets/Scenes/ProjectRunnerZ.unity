@@ -271,6 +271,9 @@ MonoBehaviour:
   gameOver: 0
   explosionParticle: {fileID: 0}
   dirtParticle: {fileID: 0}
+  isGameActive: 0
+  gameOverText: {fileID: 1865438925}
+  restartButton: {fileID: 435673073}
   jumpSound: {fileID: 0}
   crashSound: {fileID: 0}
   playerAudio: {fileID: 0}
@@ -698,7 +701,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 435673074}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: c4460c839b0cb4ef0aa9aeb1e517a9e3, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: 
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &435673074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,6 +752,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435673071}
   m_CullTransparentMesh: 1
+--- !u!1 &465727895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465727897}
+  - component: {fileID: 465727896}
+  m_Layer: 0
+  m_Name: Menu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &465727896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465727895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4460c839b0cb4ef0aa9aeb1e517a9e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &465727897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465727895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.484841, y: -7.441081, z: -0.34741542}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,10 +1136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectPrefabs:
   - {fileID: 1143141675554911712, guid: dcfc0cda417c34262a27f8764027c5c9, type: 3}
-  isGameActive: 1
   scoreText: {fileID: 1953970768}
-  gameOverText: {fileID: 1865438925}
-  restartButton: {fileID: 435673073}
 --- !u!4 &1030484406
 Transform:
   m_ObjectHideFlags: 0

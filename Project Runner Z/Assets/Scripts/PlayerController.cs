@@ -21,6 +21,10 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
 
+    public bool isGameActive;
+    public TextMeshProUGUI gameOverText;
+    public Button restartButton;
+
     // Audio Variable
 
     public AudioClip jumpSound;
@@ -60,7 +64,15 @@ public class PlayerController : MonoBehaviour
             points = 10;
             UpdateScore(points);
         }
-
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+ 
+            gameOverText.gameObject.SetActive(true);
+            restartButton.gameObject.SetActive(true);
+            isGameActive = false;
+            
+        }
     }
 
     public void UpdateScore(int scoreToAdd)
@@ -70,23 +82,3 @@ public class PlayerController : MonoBehaviour
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

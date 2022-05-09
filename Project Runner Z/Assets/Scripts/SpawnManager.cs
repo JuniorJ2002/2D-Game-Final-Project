@@ -7,14 +7,11 @@ using UnityEngine.UI;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] objectPrefabs;
-    private float spawnDelay = 2;
-    private float spawnInterval = 3f;
+    private float spawnDelay = 5f;
+    private float spawnInterval = 5f;
     private int score;
-    public bool isGameActive;
     public TextMeshProUGUI scoreText;
-    public TextMeshProUGUI gameOverText;
-    public Button restartButton;
-
+    
 
     private PlayerController PlayerControllerScript;
 
@@ -47,19 +44,10 @@ public class SpawnManager : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collide");
 
-        if (collision.gameObject.tag == "Enemy")
-        {
-           
-
-            gameOverText.gameObject.SetActive(true);
-            restartButton.gameObject.SetActive(true);
-            isGameActive = false;
-
-        }
+        
     }
 }
 
